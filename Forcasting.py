@@ -85,11 +85,12 @@ class Forecast:
     def arima_model(self,df,p,d,q,P=None,D=None,Q=None):
         if(P is None):
             model = ARIMA(df,order=(p,d,q))
-            model_fit =model.fit(df)
+            model_fit =model.fit()
         else:
             model = ARIMA(df,order=(p,d,q), seasonal_order=(P,D,Q,7))
-            model_fit =model.fit(df)
+            model_fit =model.fit()
 
+        
         pred_data_test = model_fit.predict(n_periods=len(df))
         prediction = pd.DataFrame({'y-pred':pred_data_test}, index=df.index)
         prediction = prediction.join(df)

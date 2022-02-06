@@ -16,6 +16,7 @@ from AnomalyDetection import Detector as ad
 import warnings
 warnings.filterwarnings('ignore')
 
+st.navbar("Stock Price Prediction")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(
@@ -128,7 +129,7 @@ def plot_nn_train(traindata):
         xaxis_title="Date",
         yaxis_title="Price",
         legend_title="Legend",
-        legend=dict(x=0, y=1.1),
+        legend=dict(x=1, y=1),
         margin=dict(l=0, r=0, t=50, b=0),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
@@ -164,7 +165,7 @@ def plot_nn_test(testdata):
         xaxis_title="Date",
         yaxis_title="Price",
         legend_title="Legend",
-        legend=dict(x=0, y=1.1),
+        legend=dict(x=1, y=1),
         margin=dict(l=0, r=0, t=50, b=0),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
@@ -273,7 +274,7 @@ def forecasting():
         
         st.subheader("ARIMA Model Result")
         st.sidebar.caption("Plase select a model parameters")
-        issesion = st.sidebar.checkbox("Seesional Data")
+        issesion = st.sidebar.checkbox("Seasonal Data")
         n_size = st.sidebar.slider("Select a size of training data",1,len(df),5)
 
         p = st.sidebar.number_input("Select a p value",0,3,1)
@@ -293,13 +294,33 @@ def forecasting():
                 pred, model = fc.arima_model(df['Adj Close'][:n_size],int(p),int(d),int(q),int(P),int(D),int(Q))
                 col1,col2 = st.columns(2)
                 col1.write(pred)
-                """
-
-                GELŞTİRME DEVAM EDECEK
-
-                """
-
                 col2.pyplot(plotpred(df[:n_size],pred))
+                st.write(model.summary())
+                
+
+
+                valueList = []
+                metricsList = []
+                for i in method_name:
+                
+                    values = evulation(i,pred['y-pred'],pred['Adj Close'])             
+                    metricsList.append(i)
+                    valueList.append(values)
+
+                result = dict(zip(metricsList, valueList))
+                col1, col2, col3,col4,col5 = st.columns(5)
+                try:
+                    for i in range(len(result)):
+                        col1.metric(list(result.keys())[i],list(result.values())[i])
+                        col2.metric(list(result.keys())[i+1],list(result.values())[i+1])
+                        col3.metric(list(result.keys())[i+2],list(result.values())[i+2])
+                        col4.metric(list(result.keys())[i+3],list(result.values())[i+3])
+                        col5.metric(list(result.keys())[i+4],list(result.values())[i+4])
+                        break
+                except:
+                    pass
+
+                
 
 
 
@@ -308,7 +329,7 @@ def forecasting():
         else:
             pred, predmodel = fc.arima_model(df['Adj Close'][:n_size],int(p),int(d),int(q),P=None,D=None,Q=None)
 
-            if st.sidebar.button("Detail"): # buton
+            if st.sidebar.button("Forecast"): # buton
                 
                 col1,col2 = st.columns(2)
                 col1.write(pred)
@@ -322,6 +343,8 @@ def forecasting():
                     values = evulation(i,pred['y-pred'],pred['Adj Close'])             
                     metricsList.append(i)
                     valueList.append(values)
+
+                st.write(predmodel.summary())
 
                 result = dict(zip(metricsList, valueList))
                 col1, col2, col3,col4,col5 = st.columns(5)
@@ -370,11 +393,12 @@ def forecasting():
                     trainDATA,testDATA,model = Forecast.LSTM(df,train_size,loss_func,optimizer_methot,epoch_size,look_back)
                     if trainDATA is not None:
                         st.success('Done!')
-                col1,col2 = st.columns(2)
-                col1.subheader("Train Result")    
-                col1.plotly_chart(plot_nn_train(trainDATA))
-                col2.subheader("Test Result")
-                col2.plotly_chart(plot_nn_test(testDATA))
+                
+                st.subheader("Train Result")    
+                st.plotly_chart(plot_nn_train(trainDATA))
+                st.subheader("Test Result")
+                st.plotly_chart(plot_nn_test(testDATA))
+
                 st.plotly_chart(plot_nn(trainDATA,testDATA,df,"Stoke Price Prediction with LSTM" ))
                 st.subheader("Result Data")
                 col1,col2 = st.columns(2)
@@ -594,16 +618,16 @@ elif app_mode == "Forecasting":
         forecasting()
     except FileNotFoundError:
         st.error("Please go main page, select company and save the data")
-    except:
-        st.error("Please try again")
+    except Exception as e:
+        st.error("Please try again"+"\n"+str(e))
 
 elif app_mode =='Anomaly Detection':
     try:
         anomaly()
     except FileNotFoundError:
         st.error("Please go main page, select company and save the data")
-    except:
-        st.error("Please try again")
+    except Exception as e:
+        st.error("Please try again"+"\n"+str(e))
 
 elif app_mode == "About":
     aboutpage()

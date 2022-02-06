@@ -61,6 +61,6 @@ class Detector:
         hovermode="x",
         legend_title="Legend",
         plot_bgcolor="darkblue",
-        width=1280 ,
+        width=1080 ,
         height=720,)   
         return fig
