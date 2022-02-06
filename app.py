@@ -1,7 +1,4 @@
-from glob import glob
-import re
-from turtle import color
-from marshmallow import pre_dump
+from time import time
 import plotly.express as px
 import streamlit as st
 import pandas as pd
@@ -10,9 +7,16 @@ import matplotlib.pyplot as plt
 from  Collection import Data
 from Forcasting import Forecast
 from statsmodels.graphics.tsaplots import plot_acf,plot_pacf
+from PIL import Image
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+from AnomalyDetection import Detector as ad
+
 
 import warnings
 warnings.filterwarnings('ignore')
+
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(
      page_title="Stok Price Analyis App",
@@ -54,38 +58,139 @@ def plotpred(df,pred):
     return fig
 
 
-def plot_feature_pred(df,preddata):
-    fig, ax = plt.subplots()
-    ax.plot(df.index,df['Adj Close'].values,label='Actual',color='#0066ff')
-    ax.plot(preddata.index,preddata['y-pred'].values,label='Predict',color='#ff0000')
+def plot_feature_pred(preddata):
+    fig = px.line(preddata, x='Date', y="y-pred", width=1080,height=720,labels={'y-pred':'$'},
+    template="seaborn",color_discrete_sequence=["#0066ff"])
+    return fig
+
+
+def plot_nn(train,test,df,title):
+    fig = go.Figure([
+        go.Scatter(
+            name='Train Pred',
+            x=df.index[:len(train)],
+            y=train['train_pred'],
+            mode='markers+lines',
+            marker=dict(color='red', size=3),
+            showlegend=True
+        ),
+        go.Scatter(
+            name='Test Pred',
+            x=df.index[len(train):],
+            y=test['test_pred'],
+            mode='markers+lines',
+            marker=dict(color="darkblue", size=3),
+            line=dict(width=2),
+            showlegend=True
+        ),
+        go.Scatter(
+            name='Actual',
+            x=df.index,
+            y=df['Adj Close'],
+            marker=dict(color="orange"),
+            line=dict(width=3),
+            mode='markers+lines',
+            showlegend=True
+        )
+    ])
+    fig.update_layout(
+        yaxis_title='Stock Price ($/Day)',
+        xaxis_title='Date',
+        title=title,
+        hovermode="x",
+        legend_title="Legend",
+        plot_bgcolor="LightSteelBlue",
+        width=1080,
+        height=720,
+    )
+    return fig
 
 
 
+def plot_nn_train(traindata):
+    fig = make_subplots(rows=1, cols=2)
+    fig.append_trace(
+        go.Scatter(x=traindata['train_pred'].index,
+                    y=traindata['train_pred'],
+                    name='Train_Pred',
+                    mode='markers+lines',
+                    marker=dict(color='red', size=2),
+                    showlegend=True) , 1, 1)
+    fig.append_trace(
+        go.Scatter(x=traindata['train_pred'].index,
+                    y=traindata['Actual'],
+                    name='Train_Actual',
+                    mode='markers+lines',
+                    marker=dict(color='blue', size=2),
+                    showlegend=True) , 1, 2)
+    fig.update_layout(
+        title="Train Data Result",
+        xaxis_title="Date",
+        yaxis_title="Price",
+        legend_title="Legend",
+        legend=dict(x=0, y=1.1),
+        margin=dict(l=0, r=0, t=50, b=0),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="#7f7f7f"
+        )
+    )
+    return fig
 
+def plot_nn_test(testdata):
+    fig = make_subplots(rows=1, cols=2)
+
+    fig.append_trace(
+        go.Scatter(x=testdata['test_pred'].index,
+                    y=testdata['test_pred'],
+                    name='Test_Pred',
+                    mode='markers+lines',
+                    marker=dict(color='purple', size=2),
+                    showlegend=True) , 1, 1)
+
+    fig.append_trace(
+        go.Scatter(x=testdata['test_pred'].index,
+                    y=testdata['Actual'],
+                    name='Test_Actual',
+                    mode='markers+lines',
+                    marker=dict(color='cyan', size=2),
+                    showlegend=True) , 1, 2)
+
+    fig.update_layout(
+        title="Test Data Result",
+        xaxis_title="Date",
+        yaxis_title="Price",
+        legend_title="Legend",
+        legend=dict(x=0, y=1.1),
+        margin=dict(l=0, r=0, t=50, b=0),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="#7f7f7f"
+        )
+    )
+    return fig
 
 def evulation(method_name,y_pred,y_true):
 
     if(method_name=="MAPE"):
-        return Forecast.MAPE(y_true,y_pred).round(2)
+        return Forecast.MAPE(y_true,y_pred).round(3)
         
     if(method_name=="RMSE"):
-        return Forecast.RMSE(y_true,y_pred).round(2)
+        return Forecast.RMSE(y_true,y_pred).round(3)
     if(method_name=="MAE"):
-        return Forecast.MAE(y_true,y_pred).round(2)
+        return Forecast.MAE(y_true,y_pred).round(3)
     if(method_name=="MSE"):
-        return Forecast.MSE(y_true,y_pred).round(2)
+        return Forecast.MSE(y_true,y_pred).round(3)
     if(method_name=="R2"):
-        return Forecast.R2(y_true,y_pred).round(2)
+        return Forecast.R2(y_true,y_pred).round(3)
     else:
         return st.error("Please select valid evulation metrics")
-
-
-
-
-
-
-
-
 
 
  
@@ -94,6 +199,9 @@ def evulation(method_name,y_pred,y_true):
 def homepage():
     st.title("Welcome to Stock App")
     st.subheader("Stock App is a web app that can help you to predict stock prices and anomaly detection")
+    image = Image.open(r'.\temp\mainpage.jpg')
+    st.image(image, caption='Photo by Maxim Hopman on Unsplash',use_column_width='auto')
+
     st.markdown(""" Please select a stock from the dropdown menu below to see the stock price result""")
     col1, col2 = st.columns(2)
     s_box = col1.selectbox("Select a stock", ("AAPL", "MSFT", "AMZN", "GOOG", "FB", "NFLX","Other"))
@@ -102,56 +210,70 @@ def homepage():
         
     start = col2.date_input("Start Date", value=datetime.date(2000, 1, 1),max_value=datetime.date.today())
     end = col2.date_input("End Date", value=datetime.datetime.now(),max_value=datetime.date.today())
+    
+    getstock = col1.button("Get Stock Price")
+    savedata = col1.button("Save Data")
 
+    if(getstock):
+        global df,data
+        if(s_box == "Other"):
+            if(s_w != ""):
+                try:
+                    df = load_data(s_w,start,end)
+                    st.success("Data is loaded successfully")
+                    st.subheader("Stock Price on "+str(s_w)+" between "+str(start)+" and "+str(end))
+                    st.plotly_chart(timeSeries(df))
 
-    if(st.button("Get Stock Price")):
-            global df,data
-            if(s_box == "Other"):
-                if(s_w != ""):
-                    try:
-                        df = load_data(s_w,start,end)
-                        st.success("Data is loaded successfully")
-                        st.subheader("Stock Price on "+str(s_w)+" between "+str(start)+" and "+str(end))
-                        st.plotly_chart(timeSeries(df))
-
-                    except:
-                        st.error("Please type a valid stock name")
-                else:
-                    st.error("Please type a stock name")
+                except:
+                    st.error("Please type a valid stock name")
             else:
-                df = load_data(s_box.upper(),start,end)
-                st.success("Data is loaded successfully")
-                st.subheader("Stock Price on "+str(s_box)+" between "+str(start)+" and "+str(end))
-                st.plotly_chart(timeSeries(df))
+                st.error("Please type a stock name")
+        else:
+            df = load_data(s_box.upper(),start,end)
+            st.success("Data is loaded successfully")
+            st.subheader("Stock Price on "+str(s_box)+" between "+str(start)+" and "+str(end))
+            st.plotly_chart(timeSeries(df))
 
+        st.info("To continue the application, you need to save the data")
+        if (savedata):
+            with st.spinner('Wait for it...'):
+                time.sleep(2)
+                df.to_csv("data.csv")
                 
+            st.success("Data is saved successfully")
+            
+
+        
     
 
 def forecasting():
     # try:
-    st.title("Forcecasting")
+    st.title("Forcecasting Page ")
     df = pd.read_csv("data.csv")
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
     df.set_index("Date",inplace=True)
-    st.header("Stock Price Forecasting")
-    diffnum = st.sidebar.slider("Select a discrete difference of data",0,30,1)
-    lagnum = st.sidebar.slider("Select lagg discrete difference of data",0,100,1)
     
-    fc = Forecast(df['Adj Close'],diffnum)
-    df_diff = fc.get_diff()
-    if(df_diff is False):
-        st.error("Please select valid discrete difference of data")
-    else:
-        col1,col2 = st.columns(2)
-        col1.pyplot(plot_acf(df_diff.dropna(),lags=lagnum,title="Stock Price ACF"),color="green",vlines_kwargs={"color": "green"})
-        col2.pyplot(plot_pacf(df_diff.dropna(),lags=lagnum,title="Stock Price PACF"))
-    
-    st.subheader("Forecast Method")
-    method = st.sidebar.selectbox("Select a method",("Box-Jenkins","Neural Network"))
+
+    st.write("Plase select forecasting method")
+    method = st.sidebar.selectbox("Select a Forecast method",("Box-Jenkins","Neural Network"))
+
     if(method == "Box-Jenkins"):
+        
+        diffnum = st.sidebar.slider("Select a discrete difference of data",0,30,1)
+        lagnum = st.sidebar.slider("Select lagg discrete difference of data",0,100,1)
+
+        fc = Forecast(df['Adj Close'],diffnum)
+        df_diff = fc.get_diff()
+        if(df_diff is False):
+            st.error("Please select valid discrete difference of data")
+        else:
+            col1,col2 = st.columns(2)
+            col1.pyplot(plot_acf(df_diff.dropna(),lags=lagnum,title="Stock Price ACF"),color="green",vlines_kwargs={"color": "green"})
+            col2.pyplot(plot_pacf(df_diff.dropna(),lags=lagnum,title="Stock Price PACF"))
+        
         st.subheader("ARIMA Model Result")
         st.sidebar.caption("Plase select a model parameters")
-        issesion = st.sidebar.checkbox("Is Time Series Sessional ?")
+        issesion = st.sidebar.checkbox("Seesional Data")
         n_size = st.sidebar.slider("Select a size of training data",1,len(df),5)
 
         p = st.sidebar.number_input("Select a p value",0,3,1)
@@ -184,12 +306,12 @@ def forecasting():
                 
         # Sessional olmadığı zaman
         else:
-            
-            if st.sidebar.button("Forecast"): # buton
-                pred, predmodel = fc.arima_model(df['Adj Close'][:n_size],int(p),int(d),int(q),P=None,D=None,Q=None)
+            pred, predmodel = fc.arima_model(df['Adj Close'][:n_size],int(p),int(d),int(q),P=None,D=None,Q=None)
+
+            if st.sidebar.button("Detail"): # buton
+                
                 col1,col2 = st.columns(2)
                 col1.write(pred)
-
                 col2.pyplot(plotpred(df[:n_size],pred))
                 st.subheader("Forecast Evaluation")
 
@@ -214,92 +336,274 @@ def forecasting():
                 except:
                     pass
                 
-                pred_feature = st.checkbox("Forecast Feature")
+            pred_feature = st.checkbox("Forecast Feature")
             if(pred_feature):
-                date_pred_start = st.sidebar.date_input("Select a date to predict",min_value =df.index.min())
-                date_pred_end = st.sidebar.date_input("Select a date to predict")
-                pred = Forecast.predict_feature(model=predmodel,start=date_pred_start,end=date_pred_end)
+                date_pred_start = st.date_input("Select a start date to predict",min_value = df.index.max())
+                date_pred_end = st.date_input("Select a end date to predict",min_value = date_pred_start)
+                if st.button("Predict"):
+                    pred = Forecast.predict_feature(model=predmodel,start=date_pred_start,end=date_pred_end)
+                    st.subheader("Prediction Result")
+                    col1,col2 = st.columns(2)
+                    col1,col2 = st.columns(2)
+                    col1.write(pred)
+                    col2.plotly_chart(plot_feature_pred(pred))
+
+    elif(method == "Neural Network"):
+        model_methot = st.sidebar.selectbox("Select a Neural Network Model",("LSTM","RNN"))
+        train_size = st.sidebar.slider("Select a size of training data",1,len(df),5)
+        if(model_methot == "LSTM"):
+            
+            look_back = st.sidebar.number_input("Select a size of forget ",1,train_size,step=1)
+        else:
+            window_size = st.sidebar.slider("Select a size of window size",1,train_size,2)
+
+        loss_func = st.sidebar.radio("Select a loss function",("MSE","MAE","MSLE","MAPE"))
+        optimizer_methot = st.sidebar.radio("Select a optimizer",("SGD","RMSprop","Adam","Adagrad","Adadelta","Adamax","Nadam"))
+        epoch_size = st.sidebar.number_input("Select a epochs",1,500,5)
+        method_name = st.sidebar.multiselect("Select a evulation metrics",["MAPE","RMSE","MAE","MSE","R2"],default=["MAPE"])
+        get_model = st.sidebar.button("Train Model")
+
+
+        if(get_model):
+            if(model_methot == "LSTM"):
+                with st.spinner('Wait for it...'):
+                    trainDATA,testDATA,model = Forecast.LSTM(df,train_size,loss_func,optimizer_methot,epoch_size,look_back)
+                    if trainDATA is not None:
+                        st.success('Done!')
                 col1,col2 = st.columns(2)
-                st.subheader("Prediction Feature")
+                col1.subheader("Train Result")    
+                col1.plotly_chart(plot_nn_train(trainDATA))
+                col2.subheader("Test Result")
+                col2.plotly_chart(plot_nn_test(testDATA))
+                st.plotly_chart(plot_nn(trainDATA,testDATA,df,"Stoke Price Prediction with LSTM" ))
+                st.subheader("Result Data")
                 col1,col2 = st.columns(2)
-                col1.write(pred)
-                #col2.pyplot(plot_feature_pred(df[:n_size],pred))
+                col1.write(testDATA)
+                col2.write(trainDATA)
+
+                st.subheader("Model Evaluation")
+                st.write("Train Accuracy")
+
+                valueList = []
+                metricsList = []
+                for i in method_name:
+                
+                    values = evulation(i,trainDATA['train_pred'],trainDATA['Actual'])             
+                    metricsList.append(i)
+                    valueList.append(values)
+
+                result = dict(zip(metricsList, valueList))
+                col1, col2, col3,col4,col5 = st.columns(5)
+                try:
+                    for i in range(len(result)):
+                        col1.metric(list(result.keys())[i],list(result.values())[i])
+                        col2.metric(list(result.keys())[i+1],list(result.values())[i+1])
+                        col3.metric(list(result.keys())[i+2],list(result.values())[i+2])
+                        col4.metric(list(result.keys())[i+3],list(result.values())[i+3])
+                        col5.metric(list(result.keys())[i+4],list(result.values())[i+4])
+                        break
+                except:
+                    pass
+    # =============================================================================
+                
+                st.write("Test Accuracy")
+                
+                valueList = []
+                metricsList = []
+                for i in method_name:
+                
+                    values = evulation(i,testDATA['test_pred'],testDATA['Actual'])             
+                    metricsList.append(i)
+                    valueList.append(values)
+
+                result = dict(zip(metricsList, valueList))
+                col1, col2, col3,col4,col5 = st.columns(5)
+                try:
+                    for i in range(len(result)):
+                        col1.metric(list(result.keys())[i],list(result.values())[i])
+                        col2.metric(list(result.keys())[i+1],list(result.values())[i+1])
+                        col3.metric(list(result.keys())[i+2],list(result.values())[i+2])
+                        col4.metric(list(result.keys())[i+3],list(result.values())[i+3])
+                        col5.metric(list(result.keys())[i+4],list(result.values())[i+4])
+                        break
+                except:
+                    pass
+
+            elif(model_methot == "RNN"):
+                with st.spinner('Wait for it...'):
+                    pred_df_test,pred_df_train = Forecast.RNN(df,train_size,window_size,loss_func,optimizer_methot,epoch_size)
+                    if(pred_df_test is not None):
+                        st.success('Done!')
+                st.caption("Prediction Result")
+                st.plotly_chart(plot_nn(pred_df_train,pred_df_test,df,"Stock Price Prediction with RNN"))
+                
+                
+                st.subheader("Result Data")
+                col1,col2 = st.columns(2)
+                col1.write(pred_df_test)
+                col2.write(pred_df_train)
+
+                
+
+                st.subheader("Model Evaluation")
+                st.write("Train Accuracy")
+
+                valueList = []
+                metricsList = []
+                for i in method_name:
+                
+                    values = evulation(i,pred_df_train['train_pred'],df['Adj Close'][:len(pred_df_train)])          
+                    metricsList.append(i)
+                    valueList.append(values)
+
+                result = dict(zip(metricsList, valueList))
+                col1, col2, col3,col4,col5 = st.columns(5)
+                try:
+                    for i in range(len(result)):
+                        col1.metric(list(result.keys())[i],list(result.values())[i])
+                        col2.metric(list(result.keys())[i+1],list(result.values())[i+1])
+                        col3.metric(list(result.keys())[i+2],list(result.values())[i+2])
+                        col4.metric(list(result.keys())[i+3],list(result.values())[i+3])
+                        col5.metric(list(result.keys())[i+4],list(result.values())[i+4])
+                        break
+                except:
+                    pass
+    # =============================================================================
+                
+                st.write("Test Accuracy")
+                
+                valueList = []
+                metricsList = []
+                for i in method_name:
+                
+                    values = evulation(i,pred_df_test['test_pred'],df['Adj Close'][len(pred_df_train):])            
+                    metricsList.append(i)
+                    valueList.append(values)
+
+                result = dict(zip(metricsList, valueList))
+                col1, col2, col3,col4,col5 = st.columns(5)
+                try:
+                    for i in range(len(result)):
+                        col1.metric(list(result.keys())[i],list(result.values())[i])
+                        col2.metric(list(result.keys())[i+1],list(result.values())[i+1])
+                        col3.metric(list(result.keys())[i+2],list(result.values())[i+2])
+                        col4.metric(list(result.keys())[i+3],list(result.values())[i+3])
+                        col5.metric(list(result.keys())[i+4],list(result.values())[i+4])
+                        break
+                except:
+                    pass
+
+
+
+def anomaly():
+    st.title("Anomaly Detection Page")
+    modelname = st.sidebar.selectbox("Select the Model",('abod', 'cluster', 'cof', 'iforest',
+    'histogram', 'knn', 'lof','svm','pca','mcd','sod','sos'),help="Select the Model",index=3)
+    fraction = st.sidebar.slider("Select the number of fraction",0.0,max_value = 1.0,value=0.5,step=0.01)
+    buttonstate = st.sidebar.button("Get Anomalies")
+    if(buttonstate):
+        df = pd.read_csv("data.csv")
+        data = ad.Preporcess(data=df)
+        result = ad.CaretModel(data,modelname,fraction)
+        with st.spinner('Wait for it...'):
+            st.plotly_chart(ad.plotModel(result))
+            st.success('Done!')
+        
+        
 
 
 
 
-
+def aboutpage():
+    col1,col2 = st.columns(2)
+    col1.markdown("""
+    #  🟢 About
+    This is a web application that can help you estimate the stock prices and anomaly detection. 
     
-
-"""
-https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/#:~:text=ARIMA%2C%20short%20for%20'AutoRegressive%20Integrated,to%20predict%20the%20future%20values.
-https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.ARIMA.html#pmdarima.arima.ARIMA
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def force_layout():
-    st.markdown("""
-    #### About
-    This is a web app that can help you to predict stock prices and anomaly detection.
-    It can be used for any stock.
+    Available for any company.
     """)
-    st.markdown("""
-    #### Features
+    col2.markdown("""
+    # 🟣 Features 
+    - Stock Price Prediction V.1.0
+    
     1. You can see the stock price graph
     2. You can see the stock price anomaly
     3. You can see the stock price forecast
+
+    
     """)
     st.markdown("""
-    #### How to use
+    *********************************
+    # 🔴 How to use
     1. Select a stock from the dropdown menu below to see the stock price result
     2. You can type a stock name if you select "Other"
     3. You can select a start date and end date
     4. You can see the stock price anomaly
     5. You can see the stock price anomaly with the original graph
+    6. You can see the stock price forecast
+
+    **❗️ WARNING:** Can't switch to other pages without saving the data you selected.
+
     """)
     st.markdown("""
-    #### Developed by
-    Burak Uğur
+    *********************************
+    # 👨🏽‍💻 Developed by
+
+    - Burak Uğur
+
     """)
     st.markdown("""
-    #### Contact
+    #### 📞 Contact
     >   Email: burak.uugur12@gmail.com
 
-    >   Github: @burakugurr """)
-
+    >   Github: @burakugurr 
     
+    >   LinkedIn: @burakugurr
 
+    [![](https://img.shields.io/twitter/follow/burakugur?style=social)](https://www.twitter.com/bburakuugur)
+    """)
+    st.markdown("""
 
+    # 🛡 License 
+    This project is licensed under the MIT License.
 
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    
+    """)
+    st.markdown("""**If you like this project, please give a star on Github. Thank you!** """)
 
 
 # Main Function
 
 
 
-
-
 app_mode = st.sidebar.selectbox("Choose the app mode",
-        ["Home Page","Forecasting", "Anomaly Detection","About"])
+        ["Home Page","Forecasting", "Anomaly Detection","About"],
+        help="Select the page",index=0)
+
 
 
 if app_mode == "Home Page":
-    homepage()
+    try:
+        homepage()
+    except Exception as e:
+        st.error("Please restart the app"+"\n"+str(e))
+
 elif app_mode == "Forecasting":
-    forecasting()
+    try:
+        forecasting()
+    except FileNotFoundError:
+        st.error("Please go main page, select company and save the data")
+    except:
+        st.error("Please try again")
+
 elif app_mode =='Anomaly Detection':
-    anomaly()
+    try:
+        anomaly()
+    except FileNotFoundError:
+        st.error("Please go main page, select company and save the data")
+    except:
+        st.error("Please try again")
+
 elif app_mode == "About":
-    force_layout()
+    aboutpage()

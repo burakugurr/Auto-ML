@@ -1,11 +1,29 @@
+"""
+This class include all forcasting methods
+
+"""
 from statsmodels.tsa.stattools import adfuller
 import numpy as np
 import pandas as pd
-from statsmodels.tsa.arima.model import ARIMA,ARIMAResults
+from statsmodels.tsa.arima.model import ARIMA
 import pmdarima as pm
 from sklearn.metrics import mean_squared_error,r2_score,mean_absolute_error
-import datetime
+import tensorflow as tf
+from sklearn.preprocessing import StandardScaler
 
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM
+
+# Special function on LSTM
+def windowed_dataset(series, window_size, batch_size, shuffle_buffer):
+  dataset = tf.data.Dataset.from_tensor_slices(series)
+  dataset = dataset.window(window_size + 1, shift=1, drop_remainder=True)
+  dataset = dataset.flat_map(lambda window: window.batch(window_size + 1))
+  dataset = dataset.shuffle(shuffle_buffer).map(lambda window: (window[:-1], window[-1]))
+  dataset = dataset.batch(batch_size).prefetch(1)
+  return dataset
+
+# Difference hypothesis test function
 def adfuller_test(df):
     result = adfuller(df.dropna())
     if(result[1] > 0.05):
@@ -13,6 +31,7 @@ def adfuller_test(df):
     else:
         return True
 
+# Data diffirance function
 def DataDiff(df,diff_number):
     if(adfuller_test(df) == True):
             return df
@@ -23,6 +42,14 @@ def DataDiff(df,diff_number):
         else:
             return False
 
+# LSTM dateset creater function
+def create_dataset(dataset, look_back=1):
+	dataX, dataY = [], []
+	for i in range(len(dataset)-look_back-1):
+		a = dataset[i:(i+look_back), 0]
+		dataX.append(a)
+		dataY.append(dataset[i + look_back, 0])
+	return np.array(dataX), np.array(dataY)
 
 
 
@@ -34,7 +61,8 @@ class Forecast:
 
     def get_diff(self):
         return DataDiff(self.df,self.lag_number)
-
+    
+    # Auto Arima model
     def auto_arima(df,is_sessional):
         model = pm.auto_arima(df, 
                     start_p=1, start_q=1,
@@ -53,6 +81,7 @@ class Forecast:
         
         return pred_df,model
 
+    # Manual Arima model
     def arima_model(self,df,p,d,q,P=None,D=None,Q=None):
         if(P is None):
             model = ARIMA(df,order=(p,d,q))
@@ -66,13 +95,15 @@ class Forecast:
         prediction = prediction.join(df)
 
         return prediction,model_fit
+    
+    # Prediction function     
+    def predict_feature(model,end,start):
+        pred_data_test = model.predict(0,(end-start).days)  
+        prediction = pd.DataFrame({'y-pred':pred_data_test}).reset_index()
         
-    def predict_feature(model,end,start=datetime.datetime.today()):
-        pred_data_test = model.predict(start,end)
-        prediction = pd.DataFrame({'y-pred':pred_data_test}, index=pd.date_range(start=start,end=end,freq='D'))
-        return prediction 
+        return prediction
 
-
+    # evulation metrics staticmethot olarak da tanımlanabilir
     def MAPE(y_true, y_pred): 
         y_true, y_pred = np.array(y_true), np.array(y_pred)
         return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
@@ -89,3 +120,103 @@ class Forecast:
     def MSE(y_true, y_pred):
         return mean_squared_error(y_true, y_pred)
 
+    def LSTM(df,size,loss,optimizer,epochs,look_back = 1):
+
+        scaler = StandardScaler()
+
+        train,test = df['Adj Close'][:size],df['Adj Close'][size:]
+        
+        trainT = scaler.fit_transform(train.values.reshape(-1,1))
+        testT = scaler.fit_transform(test.values.reshape(-1,1))
+
+        
+        trainX, trainY = create_dataset(trainT, look_back)
+        testX, testY = create_dataset(testT, look_back)
+
+        trainX = np.reshape(trainX, (trainX.shape[0], 1, trainX.shape[1]))
+        testX = np.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
+
+
+        model = Sequential()
+        model.add(LSTM(50, input_shape=(1, look_back)))
+        model.add(Dense(1))
+        model.compile(loss=loss, optimizer=optimizer)
+        model.fit(trainX, trainY, epochs=epochs, batch_size=1, verbose=2)
+        
+
+        # predict dataset
+        TrainPredict = model.predict(trainX)
+        testPredict = model.predict(testX)
+
+        # invert predictions
+        trainPredict = scaler.inverse_transform(TrainPredict)
+        trainY = scaler.inverse_transform([trainY])
+
+        testPredict = scaler.inverse_transform(testPredict)
+        testY = scaler.inverse_transform([testY])
+
+        trainDATA = pd.DataFrame({'train_pred':trainPredict.flatten(),'Actual':trainY.flatten()})
+        testDATA = pd.DataFrame({'test_pred':testPredict.flatten(),'Actual':testY.flatten()})
+
+        
+        return trainDATA,testDATA,model
+
+    # RNN model
+    def RNN(df,train_size,window_size,loss,optimizer,epochs):
+        tf.keras.backend.clear_session()
+        tf.random.set_seed(51)
+        np.random.seed(51)
+
+        scaler = StandardScaler()
+
+        time_train = df.index[:train_size]
+        x_train = df['Adj Close'][:train_size]
+
+        time_valid = df.index[train_size:]
+        x_valid = df['Adj Close'][train_size:]
+        
+        x_train = scaler.fit_transform(x_train.values.reshape(-1,1))
+        
+        train_set = windowed_dataset(x_train, window_size, batch_size=10, shuffle_buffer=10)
+        
+        model = tf.keras.models.Sequential([
+        tf.keras.layers.Lambda(lambda x: tf.expand_dims(x, axis=-1),
+                            input_shape=[None]),
+        tf.keras.layers.SimpleRNN(100, return_sequences=True),
+        tf.keras.layers.SimpleRNN(40,return_sequences=True),
+        tf.keras.layers.Dropout(.6),
+        tf.keras.layers.SimpleRNN(60),
+        tf.keras.layers.Dense(30, activation = 'relu'),
+        tf.keras.layers.Dense(1),
+        tf.keras.layers.Lambda(lambda x: x * 100.0)
+        ])
+
+        lr_schedule = tf.keras.callbacks.LearningRateScheduler(
+            lambda epoch: 1e-8 * 10**(epoch / 20))
+        model.compile(loss=loss, optimizer=optimizer)
+
+        model.fit(train_set, epochs=epochs, callbacks=[lr_schedule])
+
+
+        y_pred = model.predict(x_valid)
+        x_pred = model.predict(x_train)
+
+        """ 
+        # Önceki Versiyon
+        forecast_test=[]
+        for time in range(len(df['Adj Close'].values)):
+            forecast_test.append(model.predict(df['Adj Close'].values[time:time + window_size][np.newaxis]))
+
+        print("FORCEST",  len(forecast_test))
+        forecast_test = forecast_test[train_size:]
+        forecast_train = forecast_test[:train_size]
+
+        results_test = np.array(forecast_test)[:, 0, 0]
+        results_train = np.array(forecast_train)[:, 0, 0]
+        
+        """
+        
+        pred_df_train = pd.DataFrame({'train_pred':scaler.inverse_transform(x_pred).flatten()}, index=time_train)
+        pred_df_test = pd.DataFrame({'test_pred':scaler.inverse_transform(y_pred).flatten()}, index=time_valid)
+
+        return pred_df_test,pred_df_train
