@@ -1,23 +1,28 @@
+# include the methods in the module
+
 from time import time
 import plotly.express as px
 import streamlit as st
 import pandas as pd
 import datetime
 import matplotlib.pyplot as plt
-from  Collection import Data
+import sys
 from Forcasting import Forecast
 from statsmodels.graphics.tsaplots import plot_acf,plot_pacf
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from AnomalyDetection import Detector as ad
-
+import DbConnection as dbc
+from PIL import Image
 
 import warnings
 warnings.filterwarnings('ignore')
 
 
 
-
+"""
+    Returns the dataframe of the stock
+"""
 @st.cache
 def load_data(s_w,start,end):
     data = Data(s_w,start,end)
@@ -27,7 +32,9 @@ def load_data(s_w,start,end):
     return df
 
 
-# Graph Functions
+"""
+  This functions is used to plot the graph of the stock
+"""
 
 def timeSeries(df):
     
@@ -46,12 +53,10 @@ def plotpred(df,pred):
     ax.legend(["Actual","Predict"])
     return fig
 
-
 def plot_feature_pred(preddata):
     fig = px.line(preddata, x='Date', y="y-pred", width=1080,height=720,labels={'y-pred':'$'},
     template="seaborn",color_discrete_sequence=["#0066ff"])
     return fig
-
 
 def plot_nn(train,test,df,title):
     fig = go.Figure([
@@ -93,8 +98,6 @@ def plot_nn(train,test,df,title):
         height=720,
     )
     return fig
-
-
 
 def plot_nn_train(traindata):
     fig = make_subplots(rows=1, cols=2)
@@ -165,6 +168,15 @@ def plot_nn_test(testdata):
     )
     return fig
 
+"""
+    This function is used to evaluate the model
+    params:
+        method: the method used to evaluate the model
+        y_pred: the predicted value
+        y_true: the actual value
+    return:
+        the evaluation result
+"""
 def evulation(method_name,y_pred,y_true):
 
     if(method_name=="MAPE"):
@@ -181,11 +193,37 @@ def evulation(method_name,y_pred,y_true):
     else:
         return st.error("Please select valid evulation metrics")
 
+"""
+    Home Page: the main page of the app
+    welcome page
+    Params:
+        username: the username of the user
+    
+"""
 
+def homepage(username):
+    
+    image = Image.open('images\Stockred.png')
+    st.title("Stockred")
+    
+    
+    col1,col2 = st.columns(2)
+    col1.image(image)
+    col2.markdown("## Welcome back *%s*"% (username))
+    col2.markdown("**Stock App is a web app that can help you to predict stock prices and anomaly detection.**")
+    col2.write("""
+        To continue, please select the data insight page from the sidebar.
+    """)
+    
  
-# Layout Functions IndexError
+"""
+    Data insgiht: the data collection page of the app
+    You can select the data and visualize the data. If you want to predict the stock price, you can save the data.
+    
+"""
 
-def homepage():
+def datainsgiht():
+    st.markdown("> ❗ **Save a data between two dates before starting the app.**")
     st.markdown(""" Please select a stock from the dropdown menu below to see the stock price result""")
     col1, col2 = st.columns(2)
     s_box = col1.selectbox("Select a stock", ("AAPL", "MSFT", "AMZN", "GOOG", "FB", "NFLX","Other"))
@@ -220,25 +258,29 @@ def homepage():
 
         st.info("To continue the application, you need to save the data")
         if (savedata):
-            with st.spinner('Wait for it...'):
+            with st.spinner('Plase wait'):
                 time.sleep(2)
                 df.to_csv("data.csv")
                 
             st.success("Data is saved successfully")
-            
+              
 
-        
+"""
+    forecast page: the page that can predict the stock price. You can select the two method(Box-Jenkins or Neural Network) to predict the stock price.
+    Params:
+        none
     
+"""
 
 def forecasting():
     # try:
-    st.title("Forcecasting Page ")
+    st.title("Forecasting Page ")
     df = pd.read_csv("data.csv")
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
     df.set_index("Date",inplace=True)
     
 
-    st.write("Plase select forecasting method")
+    st.write("Plase select forecasting method on sidebar")
     method = st.sidebar.selectbox("Select a Forecast method",("Box-Jenkins","Neural Network"))
 
     if(method == "Box-Jenkins"):
@@ -251,12 +293,13 @@ def forecasting():
         if(df_diff is False):
             st.error("Please select valid discrete difference of data")
         else:
+            st.subheader("ACF and PACF Graph")
             col1,col2 = st.columns(2)
             col1.pyplot(plot_acf(df_diff.dropna(),lags=lagnum,title="Stock Price ACF"),color="green",vlines_kwargs={"color": "green"})
             col2.pyplot(plot_pacf(df_diff.dropna(),lags=lagnum,title="Stock Price PACF"))
         
         st.subheader("ARIMA Model Result")
-        st.sidebar.caption("Plase select a model parameters")
+        st.sidebar.write("Plase select a model parameters")
         issesion = st.sidebar.checkbox("Seasonal Data")
         n_size = st.sidebar.slider("Select a size of training data",1,len(df),5)
 
@@ -372,7 +415,7 @@ def forecasting():
 
         if(get_model):
             if(model_methot == "LSTM"):
-                with st.spinner('Wait for it...'):
+                with st.spinner('Wait for result...'):
                     trainDATA,testDATA,model = Forecast.LSTM(df,train_size,loss_func,optimizer_methot,epoch_size,look_back)
                     if trainDATA is not None:
                         st.success('Done!')
@@ -437,7 +480,7 @@ def forecasting():
                     pass
 
             elif(model_methot == "RNN"):
-                with st.spinner('Wait for it...'):
+                with st.spinner('Wait for result...'):
                     pred_df_test,pred_df_train = Forecast.RNN(df,train_size,window_size,loss_func,optimizer_methot,epoch_size)
                     if(pred_df_test is not None):
                         st.success('Done!')
@@ -501,8 +544,14 @@ def forecasting():
                     pass
 
 
+"""
+    anomaly page: Detecting anomalies in stock price data
+    params:
+        None
 
+"""
 def anomaly():
+    sys.stderr = open("error.log", "w")
     st.title("Anomaly Detection Page")
     modelname = st.sidebar.selectbox("Select the Model",('abod', 'cluster', 'cof', 'iforest',
     'histogram', 'knn', 'lof','svm','pca','mcd','sod','sos'),help="Select the Model",index=3)
@@ -510,17 +559,38 @@ def anomaly():
     buttonstate = st.sidebar.button("Get Anomalies")
     if(buttonstate):
         df = pd.read_csv("data.csv")
-        data = ad.Preporcess(data=df)
+        data = ad.Preprocess(data=df)
         result = ad.CaretModel(data,modelname,fraction)
-        with st.spinner('Wait for it...'):
+        with st.spinner('Wait for plot...'):
             st.plotly_chart(ad.plotModel(result))
             st.success('Done!')
         
-        
+"""
+    accout page: Personal information of the user
+    params:
+        username: username of the user
+        db: database object of the postgresql database
+        user: user object of the postgresql database
+"""
+def account(username,db,user):
+    st.title("My Profile")
+    st.write("Welcome to the account page " + username)
+    with st.form("Update"):
+        mail = st.text_input("Email",value="")
+        new_pass = st.text_input("New Password",type="password",value="")
+        confirm_pass = st.text_input("Confirm Password",type="password",value="")
+        confirmButton = st.form_submit_button("Confirm")
 
+        if(confirmButton):
+            if(new_pass == confirm_pass):
+                if dbc.password_update(mail,new_pass,db,user):
+                    st.success("Update Successfully")
+                else:
+                    st.error("Update Failed. Please try again")
 
-
-
+"""
+    about page: Information about the project
+"""
 def aboutpage():
     col1,col2 = st.columns(2)
     col1.markdown("""
@@ -579,17 +649,31 @@ def aboutpage():
     """)
     st.markdown("""**If you like this project, please give a star on Github. Thank you!** """)
 
-def app():
+
+"""
+    The main function of the web application
+    params:
+        db: database object of the postgresql database
+        user: user object of the postgresql database
+        username: username of the user
+"""
+def app(db,user,username="User"):
+
+    # =============================================================================
     app_mode = st.sidebar.selectbox("Choose the app mode",
-    ["Save Data","Forecasting", "Anomaly Detection","About"],
+    ["Home","Data Insight","Forecasting", "Anomaly Detection","My Account","About"],
     help="Select the page",index=0)
 
-    if app_mode == "Save Data":
+    
+    # =============================================================================
+
+    if app_mode == "Data Insight":
         try:
-            homepage()
+            datainsgiht()
         except Exception as e:
             st.error("Please restart the app"+"\n"+str(e))
-
+    elif app_mode == "Home":
+        homepage(username)
     elif app_mode == "Forecasting":
         try:
             forecasting()
@@ -601,7 +685,18 @@ def app():
     elif app_mode =='Anomaly Detection':
         try:
             anomaly()
+
         except FileNotFoundError:
             st.error("Please go main page, select company and save the data")
+        except Exception as e:
+            st.error("Please try again"+"\n"+str(e))
+
+    
+    elif app_mode == 'About':
+        aboutpage()
+
+    elif app_mode == 'My Account':
+        try:
+            account(username,db,user)
         except Exception as e:
             st.error("Please try again"+"\n"+str(e))
