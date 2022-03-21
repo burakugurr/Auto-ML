@@ -1,0 +1,1 @@
+# Stockred Finance Analysis App
