@@ -2,17 +2,16 @@ from pycaret.anomaly import *
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import pycaret
 
 """
 This Class is used for detecting anomalies in the data
 
 """
-
-
 class Detector:
     # Initialize the class with the dataframe
-    def Preporcess(data):
-        data = data.drop(["High","Low"	,"Open","Close","Volume"], axis=1)
+    def Preprocess(data):
+        data = data.drop(["High","Low","Open","Close","Volume"], axis=1)
         data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
         data.set_index("Date",inplace=True)
         data['day'] = [i.day for i in data.index]
@@ -22,11 +21,19 @@ class Detector:
         data['hour'] = [i.hour for i in data.index]
         data['is_weekday'] = [i.isoweekday() for i in data.index]
         return data
-    # Create a model
+    """
+        Create a model and return the model results.
+        params:
+            data: dataframe
+            model: model name
+            fraction: fraction of data to use for training
+        return:
+            model results
+    """
+
     def CaretModel(data,model,fraction = 0.1):
         global iforest_results
-
-        s = setup(data, session_id = 123,silent=True,n_jobs=-1)
+        s = setup(data, session_id=123, silent=True,n_jobs=-1)
 
         for modelname in models().index.tolist():
             if modelname == str(model):
@@ -34,7 +41,13 @@ class Detector:
                 iforest_results = assign_model(modelend)
                 return iforest_results
         
-    # Detect anomalies and visualize the results
+    """
+        Visualization anomalies and visualize the results
+        params:
+            iforest_results: model results
+        return:
+            visualization of the results    
+    """    
     def plotModel(iforest_results):
         outlier_dates = iforest_results[iforest_results['Anomaly'] == 1].index
 

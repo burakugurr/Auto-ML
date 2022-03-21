@@ -52,16 +52,30 @@ def create_dataset(dataset, look_back=1):
 	return np.array(dataX), np.array(dataY)
 
 
-
-
+"""
+    This class is used for forcasting the time series data
+    params:
+        None
+"""
 class Forecast:
     def __init__(self,data,lag_number):
         self.df = data
         self.lag_number = lag_number
+    
+    # Prediction function     
+    def predict_feature(model,end,start):
+        pred_data_test = model.predict(0,(end-start).days)  
+        prediction = pd.DataFrame({'y-pred':pred_data_test}).reset_index()
+        
+        return prediction
 
     def get_diff(self):
         return DataDiff(self.df,self.lag_number)
     
+    """
+    --------------------------------------------------------------------------------------------------------------------
+    """
+
     # Auto Arima model
     def auto_arima(df,is_sessional):
         model = pm.auto_arima(df, 
@@ -96,30 +110,6 @@ class Forecast:
         prediction = prediction.join(df)
 
         return prediction,model_fit
-    
-    # Prediction function     
-    def predict_feature(model,end,start):
-        pred_data_test = model.predict(0,(end-start).days)  
-        prediction = pd.DataFrame({'y-pred':pred_data_test}).reset_index()
-        
-        return prediction
-
-    # evulation metrics staticmethot olarak da tanımlanabilir
-    def MAPE(y_true, y_pred): 
-        y_true, y_pred = np.array(y_true), np.array(y_pred)
-        return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
-
-    def RMSE(y_true, y_pred):
-        return np.sqrt(mean_squared_error(y_true, y_pred))
-
-    def R2(y_true, y_pred):
-        return r2_score(y_true, y_pred)
-
-    def MAE(y_true, y_pred):
-        return mean_absolute_error(y_true, y_pred)
-
-    def MSE(y_true, y_pred):
-        return mean_squared_error(y_true, y_pred)
 
     def LSTM(df,size,loss,optimizer,epochs,look_back = 1):
 
@@ -162,7 +152,6 @@ class Forecast:
         
         return trainDATA,testDATA,model
 
-    # RNN model
     def RNN(df,train_size,window_size,loss,optimizer,epochs):
         tf.keras.backend.clear_session()
         tf.random.set_seed(51)
@@ -201,23 +190,30 @@ class Forecast:
 
         y_pred = model.predict(x_valid)
         x_pred = model.predict(x_train)
-
-        """ 
-        # Önceki Versiyon
-        forecast_test=[]
-        for time in range(len(df['Adj Close'].values)):
-            forecast_test.append(model.predict(df['Adj Close'].values[time:time + window_size][np.newaxis]))
-
-        print("FORCEST",  len(forecast_test))
-        forecast_test = forecast_test[train_size:]
-        forecast_train = forecast_test[:train_size]
-
-        results_test = np.array(forecast_test)[:, 0, 0]
-        results_train = np.array(forecast_train)[:, 0, 0]
-        
-        """
         
         pred_df_train = pd.DataFrame({'train_pred':scaler.inverse_transform(x_pred).flatten()}, index=time_train)
         pred_df_test = pd.DataFrame({'test_pred':scaler.inverse_transform(y_pred).flatten()}, index=time_valid)
 
         return pred_df_test,pred_df_train
+
+    """
+    --------------------------------------------------------------------------------------------------------------------
+    """
+
+    # evulation metrics staticmethot olarak da tanımlanabilir
+    def MAPE(y_true, y_pred): 
+        y_true, y_pred = np.array(y_true), np.array(y_pred)
+        return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+
+    def RMSE(y_true, y_pred):
+        return np.sqrt(mean_squared_error(y_true, y_pred))
+
+    def R2(y_true, y_pred):
+        return r2_score(y_true, y_pred)
+
+    def MAE(y_true, y_pred):
+        return mean_absolute_error(y_true, y_pred)
+
+    def MSE(y_true, y_pred):
+        return mean_squared_error(y_true, y_pred)
+
