@@ -1,3 +1,8 @@
 scikit-learn==0.23.2
 pycaret==2.3.4
 pandas
+streamlit
+statsmodels
+pmdarima
+tensorflow
+plotly==5.6.0

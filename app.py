@@ -8,14 +8,14 @@ import StreamlitAuth
 # page detail
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(
-    page_title="Stok Price Analyis App",
-    page_icon="💰",
+    page_title="Stockred",
+    page_icon="📈",
     layout="wide",
     initial_sidebar_state="auto",
     menu_items={
         'Get Help': 'https://github.com/burakugurr',
         'Report a bug': "https://github.com/burakugurr",
-        'About': "# Stok Price Analyis App created by Burak Uğur",
+        'About': "# Stockred App created by Burak Uğur",
     }
 )
 
