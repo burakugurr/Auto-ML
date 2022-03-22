@@ -1,4 +1,5 @@
 from random import choice
+from sqlalchemy.sql.functions import user
 import streamlit as st
 import streamlit_authenticator as stauth
 from pages import page2
@@ -19,11 +20,13 @@ st.set_page_config(
     }
 )
 
+hostname = "ec2-52-213-119-221.eu-west-1.compute.amazonaws.com"
+username = "givhjdkqofykpb"
+password = "713e1983a958213f26e62023fb0b5809ceebd86c82d722dfa149d03212cc220c"
+port = "5432"
+database = "d4f45drk5rnlgg"
 
-DbConnection = StreamlitAuth.DatabaseConnection('ec2-52-213-119-221.eu-west-1.compute.amazonaws.com',
-                                                'givhjdkqofykpb',
-                                                '713e1983a958213f26e62023fb0b5809ceebd86c82d722dfa149d03212cc220c',
-                                                '5432', 'd4f45drk5rnlgg')
+DbConnection = StreamlitAuth.DatabaseConnection(hostname, username, password, port, database)
 
 db, UserClass = DbConnection.UserClassGenerator()
 

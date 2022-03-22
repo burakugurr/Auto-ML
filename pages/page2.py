@@ -11,6 +11,7 @@ from Forcasting import Forecast
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+from Collection import Data
 from AnomalyDetection import Detector as ad
 import DbConnection as dbc
 from PIL import Image
@@ -40,8 +41,16 @@ def load_data(s_w, start, end):
 
 def timeSeries(df):
 
-    fig = px.line(df, x=df.index, y="Adj Close", width=1080, height=720, labels={'Adj Close': 'Price'},
-                  template="seaborn", color_discrete_sequence=["#0066ff"])
+    fig = px.line(df, x=df.index, y=["Adj Close","Open","Close"], width=1080, height=720, labels={'Adj Close': 'Price'},
+                color_discrete_map={
+                 "Adj Close": "green",
+                 "Open": "goldenrod",
+                 "Close":"red"
+             } )
+    fig.update_layout({
+            "plot_bgcolor": "rgba(0, 50, 50, 0)",
+            "paper_bgcolor": "rgba(0, 0, 0, 0)",
+            })
     return fig
 
 
@@ -744,10 +753,9 @@ def app(db, user, username="User"):
     # =============================================================================
 
     if app_mode == "Data Insight":
-        try:
-            datainsgiht()
-        except Exception as e:
-            st.error("Please restart the app"+"\n"+str(e))
+        
+        datainsgiht()
+
     elif app_mode == "Home":
         homepage(username)
     elif app_mode == "Forecasting":

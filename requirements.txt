@@ -6,3 +6,4 @@ statsmodels
 pmdarima
 tensorflow
 plotly==5.6.0
+pandas_datareader
