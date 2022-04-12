@@ -20,11 +20,14 @@ st.set_page_config(
     }
 )
 
-hostname = "ec2-52-213-119-221.eu-west-1.compute.amazonaws.com"
-username = "givhjdkqofykpb"
-password = "713e1983a958213f26e62023fb0b5809ceebd86c82d722dfa149d03212cc220c"
+# please change this to your own database credentials
+
+hostname = "localhost"
+username = "postgres"
+password = "postgres"
 port = "5432"
-database = "d4f45drk5rnlgg"
+database = "database"
+
 
 DbConnection = StreamlitAuth.DatabaseConnection(hostname, username, password, port, database)
 
@@ -37,7 +40,6 @@ name, authentication_status = authenticator.Login('Login','main')
 if authentication_status:
     page2.app(db,UserClass,name)
 
-elif authentication_status == False:
-    st.error('Username/password is incorrect')
+
 elif authentication_status == None:
     st.warning('Please enter your username and password')

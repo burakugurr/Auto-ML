@@ -284,6 +284,15 @@ def datainsgiht():
             st.subheader("Stock Price on "+str(s_box) +
                          " between "+str(start)+" and "+str(end))
             st.plotly_chart(timeSeries(df))
+            st.markdown("## Descriptive Statistics")
+            st.write("Mean: "+str(df['Close'].mean()))
+            st.write("Median: "+str(df['Close'].median()))
+            st.write("Standard Deviation: "+str(df['Close'].std()))
+            st.write("Min: "+str(df['Close'].min()))
+            st.write("Max: "+str(df['Close'].max()))
+            st.write("Count: "+str(df['Close'].count()))
+            st.write("First Date: "+str(df['Close'].first_valid_index()))
+            st.write("Last Date: "+str(df['Close'].last_valid_index()))
 
         st.info("To continue the application, you need to save the data")
         if (savedata):
