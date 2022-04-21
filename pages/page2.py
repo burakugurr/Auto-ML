@@ -1,7 +1,9 @@
 # include the methods in the module
 
 from time import time
+from lightgbm import early_stopping
 import plotly.express as px
+from sklearn import tree
 import streamlit as st
 import pandas as pd
 import datetime
@@ -41,16 +43,16 @@ def load_data(s_w, start, end):
 
 def timeSeries(df):
 
-    fig = px.line(df, x=df.index, y=["Adj Close","Open","Close"], width=1080, height=720, labels={'Adj Close': 'Price'},
-                color_discrete_map={
-                 "Adj Close": "green",
-                 "Open": "goldenrod",
-                 "Close":"red"
-             } )
+    fig = px.line(df, x=df.index, y=["Adj Close", "Open", "Close"], width=1080, height=720, labels={'Adj Close': 'Price'},
+                  color_discrete_map={
+        "Adj Close": "green",
+        "Open": "goldenrod",
+        "Close": "red"
+    })
     fig.update_layout({
-            "plot_bgcolor": "rgba(0, 50, 50, 0)",
-            "paper_bgcolor": "rgba(0, 0, 0, 0)",
-            })
+        "plot_bgcolor": "rgba(0, 50, 50, 0)",
+        "paper_bgcolor": "rgba(0, 0, 0, 0)",
+    })
     return fig
 
 
@@ -197,7 +199,7 @@ def plot_nn_test(testdata):
 """
 
 
-def evulation(method_name, y_pred, y_true):
+def evulation(method_name, y_true, y_pred):
 
     if(method_name == "MAPE"):
         return Forecast.MAPE(y_true, y_pred).round(3)
@@ -370,7 +372,8 @@ def forecasting():
                 metricsList = []
                 for i in method_name:
 
-                    values = evulation(i, pred['y-pred'], pred['Adj Close'])
+                    values = evulation(i, pred['Adj Close'], pred['y-pred'])
+
                     metricsList.append(i)
                     valueList.append(values)
 
@@ -408,7 +411,7 @@ def forecasting():
                 metricsList = []
                 for i in method_name:
 
-                    values = evulation(i, pred['y-pred'], pred['Adj Close'])
+                    values = evulation(i, pred['Adj Close'], pred['y-pred'])
                     metricsList.append(i)
                     valueList.append(values)
 
@@ -453,7 +456,7 @@ def forecasting():
         train_size = st.sidebar.slider(
             "Select a size of training data", 1, len(df), 5)
         if(model_methot == "LSTM"):
-
+            early_stopping = st.sidebar.checkbox("Early Stopping")
             look_back = st.sidebar.number_input(
                 "Select a size of forget ", 1, train_size, step=1)
         else:
@@ -472,8 +475,12 @@ def forecasting():
         if(get_model):
             if(model_methot == "LSTM"):
                 with st.spinner('Wait for result...'):
-                    trainDATA, testDATA, model = Forecast.LSTM(
-                        df, train_size, loss_func, optimizer_methot, epoch_size, look_back)
+                    if(early_stopping == True):
+                        trainDATA, testDATA, model = Forecast.LSTM(
+                        df, train_size, loss_func, optimizer_methot, epoch_size, look_back,early_stop = early_stopping)
+                    else:
+                        trainDATA, testDATA, model = Forecast.LSTM(
+                            df, train_size, loss_func, optimizer_methot, epoch_size, look_back)
                     if trainDATA is not None:
                         st.success('Done!')
 
@@ -483,7 +490,7 @@ def forecasting():
                 st.plotly_chart(plot_nn_test(testDATA))
 
                 st.plotly_chart(plot_nn(trainDATA, testDATA, df,
-                                "Stoke Price Prediction with LSTM"))
+                                "Stock Price Prediction with LSTM"))
                 st.subheader("Result Data")
                 col1, col2 = st.columns(2)
                 col1.write(testDATA)
@@ -497,7 +504,7 @@ def forecasting():
                 for i in method_name:
 
                     values = evulation(
-                        i, trainDATA['train_pred'], trainDATA['Actual'])
+                        i,  trainDATA['Actual'], trainDATA['train_pred'])
                     metricsList.append(i)
                     valueList.append(values)
 
@@ -527,7 +534,7 @@ def forecasting():
                 for i in method_name:
 
                     values = evulation(
-                        i, testDATA['test_pred'], testDATA['Actual'])
+                        i, testDATA['Actual'], testDATA['test_pred'])
                     metricsList.append(i)
                     valueList.append(values)
 
@@ -572,7 +579,7 @@ def forecasting():
                 for i in method_name:
 
                     values = evulation(
-                        i, pred_df_train['train_pred'], df['Adj Close'][:len(pred_df_train)])
+                        i,  df['Adj Close'][:len(pred_df_train)], pred_df_train['train_pred'])
                     metricsList.append(i)
                     valueList.append(values)
 
@@ -726,7 +733,8 @@ def aboutpage():
 
     >   Github: @burakugurr 
     
-    >   LinkedIn: @burakugurr
+    >   LinkedIn: [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/burak-u%C4%9Fur/)
+
 
     [![](https://img.shields.io/twitter/follow/burakugur?style=social)](https://www.twitter.com/bburakuugur)
     """)
@@ -762,18 +770,19 @@ def app(db, user, username="User"):
     # =============================================================================
 
     if app_mode == "Data Insight":
-        
+
         datainsgiht()
 
     elif app_mode == "Home":
         homepage(username)
     elif app_mode == "Forecasting":
-        try:
-            forecasting()
-        except FileNotFoundError:
-            st.error("Please go main page, select company and save the data")
-        except Exception as e:
-            st.error("Please try again"+"\n"+str(e))
+        forecasting()
+        # try:
+        #     forecasting()
+        # except FileNotFoundError:
+        #     st.error("Please go main page, select company and save the data")
+        # except Exception as e:
+        #     st.error("Please try again"+"\n"+str(e))
 
     elif app_mode == 'Anomaly Detection':
         try:

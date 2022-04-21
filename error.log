@@ -14,11 +14,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -44,11 +44,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -74,11 +74,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -104,11 +104,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -134,11 +134,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -164,11 +164,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -194,11 +194,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -224,11 +224,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -254,11 +254,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -284,11 +284,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -314,11 +314,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -326,7 +326,7 @@ Call stack:
     profile_kwargs=profile_kwargs,
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 222, in setup
     logger.info(f"Memory: {psutil.virtual_memory()}")
-Message: 'Memory: svmem(total=17024389120, available=7888035840, percent=53.7, used=9136353280, free=7888035840)'
+Message: 'Memory: svmem(total=17024389120, available=7674544128, percent=54.9, used=9349844992, free=7674544128)'
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -344,11 +344,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -374,11 +374,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -404,11 +404,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -434,11 +434,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -464,11 +464,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -494,11 +494,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -524,11 +524,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -554,11 +554,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -584,11 +584,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -614,11 +614,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -644,11 +644,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -674,11 +674,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -704,11 +704,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -716,7 +716,7 @@ Call stack:
     profile_kwargs=profile_kwargs,
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 782, in setup
     logger.info(f"USI: {USI}")
-Message: 'USI: 8657'
+Message: 'USI: 9aaf'
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -734,11 +734,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -746,7 +746,7 @@ Call stack:
     profile_kwargs=profile_kwargs,
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 838, in setup
     logger.info(f"pycaret_globals: {pycaret_globals}")
-Message: "pycaret_globals: {'experiment__', 'target_param', 'pycaret_globals', 'create_model_container', 'fold_shuffle_param', 'X', 'fold_groups_param', '_internal_pipeline', '_all_metrics', 'transform_target_param', 'display_container', 'gpu_param', '_all_models', 'fold_param', '_ml_usecase', 'fix_imbalance_param', 'imputation_classifier', 'seed', 'imputation_regressor', '_available_plots', 'USI', 'exp_name_log', 'fold_groups_param_full', 'prep_pipe', 'transform_target_method_param', '_gpu_n_jobs_param', 'master_model_container', 'log_plots_param', 'iterative_imputation_iters_param', 'html_param', 'fix_imbalance_method_param', 'stratify_param', 'fold_generator', '_all_models_internal', 'n_jobs_param', 'data_before_preprocess', 'logging_param'}"
+Message: "pycaret_globals: {'_available_plots', 'master_model_container', 'transform_target_method_param', 'seed', 'pycaret_globals', 'USI', 'prep_pipe', 'exp_name_log', 'transform_target_param', 'gpu_param', 'target_param', 'experiment__', 'fold_groups_param', '_all_metrics', '_internal_pipeline', '_all_models', 'X', 'html_param', 'stratify_param', 'fold_groups_param_full', 'fold_shuffle_param', 'fix_imbalance_method_param', 'fold_param', 'fix_imbalance_param', 'iterative_imputation_iters_param', 'data_before_preprocess', 'log_plots_param', '_ml_usecase', '_gpu_n_jobs_param', 'create_model_container', 'display_container', '_all_models_internal', 'imputation_classifier', 'fold_generator', 'imputation_regressor', 'logging_param', 'n_jobs_param'}"
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -764,11 +764,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -794,11 +794,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -826,11 +826,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -856,11 +856,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -886,11 +886,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -916,11 +916,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -946,11 +946,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -983,11 +983,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1013,11 +1013,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1043,11 +1043,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1073,11 +1073,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1103,11 +1103,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1133,11 +1133,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1163,11 +1163,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1193,11 +1193,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1223,11 +1223,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 36, in CaretModel
     s = setup(data, session_id=123, silent=True,n_jobs=-1)
@@ -1253,11 +1253,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 38, in CaretModel
     for modelname in models().index.tolist():
@@ -1283,11 +1283,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1313,11 +1313,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1325,7 +1325,7 @@ Call stack:
     **kwargs,
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 2513, in create_model_unsupervised
     logger.info(f"create_model({function_params_str})")
-Message: 'create_model(estimator=iforest, num_clusters=4, fraction=0.04, ground_truth=None, round=4, fit_kwargs=None, verbose=True, system=True, add_to_model_list=True, raise_num_clusters=False, display=None, kwargs={})'
+Message: 'create_model(estimator=iforest, num_clusters=4, fraction=0.17, ground_truth=None, round=4, fit_kwargs=None, verbose=True, system=True, add_to_model_list=True, raise_num_clusters=False, display=None, kwargs={})'
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -1343,11 +1343,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1373,11 +1373,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1405,11 +1405,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1435,11 +1435,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1465,11 +1465,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1495,11 +1495,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1525,11 +1525,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1537,7 +1537,7 @@ Call stack:
     **kwargs,
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 2708, in create_model_unsupervised
     logger.info(str(model))
-Message: "IForest(behaviour='new', bootstrap=False, contamination=0.04,\n    max_features=1.0, max_samples='auto', n_estimators=100, n_jobs=-1,\n    random_state=123, verbose=0)"
+Message: "IForest(behaviour='new', bootstrap=False, contamination=0.17,\n    max_features=1.0, max_samples='auto', n_estimators=100, n_jobs=-1,\n    random_state=123, verbose=0)"
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -1555,11 +1555,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1585,11 +1585,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1615,11 +1615,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1645,11 +1645,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1675,11 +1675,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1705,11 +1705,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1735,11 +1735,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1747,7 +1747,7 @@ Call stack:
     **kwargs,
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 2764, in create_model_unsupervised
     logger.info(str(model))
-Message: "IForest(behaviour='new', bootstrap=False, contamination=0.04,\n    max_features=1.0, max_samples='auto', n_estimators=100, n_jobs=-1,\n    random_state=123, verbose=0)"
+Message: "IForest(behaviour='new', bootstrap=False, contamination=0.17,\n    max_features=1.0, max_samples='auto', n_estimators=100, n_jobs=-1,\n    random_state=123, verbose=0)"
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -1765,11 +1765,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 40, in CaretModel
     modelend = create_model(modelname, fraction = fraction)
@@ -1795,11 +1795,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
@@ -1825,11 +1825,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
@@ -1837,7 +1837,7 @@ Call stack:
     model, transformation=transformation, score=score, verbose=verbose
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 8460, in assign_model
     logger.info(f"assign_model({function_params_str})")
-Message: "assign_model(model=IForest(behaviour='new', bootstrap=False, contamination=0.04,\n    max_features=1.0, max_samples='auto', n_estimators=100, n_jobs=-1,\n    random_state=123, verbose=0), transformation=False, score=True, verbose=True)"
+Message: "assign_model(model=IForest(behaviour='new', bootstrap=False, contamination=0.17,\n    max_features=1.0, max_samples='auto', n_estimators=100, n_jobs=-1,\n    random_state=123, verbose=0), transformation=False, score=True, verbose=True)"
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -1855,11 +1855,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
@@ -1885,11 +1885,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
@@ -1915,11 +1915,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
@@ -1945,11 +1945,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
@@ -1975,18 +1975,19 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\anomaly.py", line 554, in assign_model
     model, transformation=transformation, score=score, verbose=verbose
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\pycaret\internal\tabular.py", line 8507, in assign_model
-    logger.info(data.shapMessage: (5590, 9)
+    logger.info(data.shape)
+Message: (5606, 9)
 Arguments: ()
 --- Logging error ---
 Traceback (most recent call last):
@@ -2004,11 +2005,11 @@ Call stack:
     self._run_script(data)
   File "c:\users\balug\appdata\local\programs\python\python37\lib\site-packages\streamlit\script_runner.py", line 379, in _run_script
     exec(code, module.__dict__)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 38, in <module>
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\app.py", line 49, in <module>
     page2.app(db,UserClass,name)
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 771, in app
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 780, in app
     anomaly()
-  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 638, in anomaly
+  File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\pages\page2.py", line 647, in anomaly
     result = ad.CaretModel(data, modelname, fraction)
   File "C:\Users\balug\OneDrive\Masaüstü\Veri Bilimi Çalýþmalarý\Auto-ML\AnomalyDetection.py", line 41, in CaretModel
     iforest_results = assign_model(modelend)
@@ -2018,4 +2019,3 @@ Call stack:
     "assign_model() succesfully completed......................................"
 Message: 'assign_model() succesfully completed......................................'
 Arguments: ()
-()
