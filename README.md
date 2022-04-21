@@ -1,5 +1,6 @@
 # Stockred Finance Analysis App
 
+<<<<<<< HEAD
 ## 🟢 About
 
 This is a web application that can help you estimate the stock prices and anomaly detection.
@@ -52,3 +53,7 @@ This project is licensed under the GNU General Public License v3.0.
 7. Ek LSTM yöntemleri eklenecek
 8. Özel sinir ağı eklenebilecek
 9. Yeni üye olma sayfası eklenecek
+=======
+Run Command:
+> Streamlit run app.py
+>>>>>>> bee7b8cc06d1344c805532e8d47994bc18b95e90
