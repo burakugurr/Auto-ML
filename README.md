@@ -1,11 +1,12 @@
 # Stockred Finance Analysis App
 
-<<<<<<< HEAD
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![version](https://img.shields.io/badge/version-0.1.0-blue)
 ## 🟢 About
 
 This is a web application that can help you estimate the stock prices and anomaly detection.
 
-> version: 0.1.0
+
 
 ## 🟣 Features
 
@@ -30,30 +31,25 @@ This is a web application that can help you estimate the stock prices and anomal
 
 ### 📞 Contact
 
-> Email: burak.ugur@protonmail.com
 
-> Github: @burakugurr
+<img src="https://badges.krynn.dev/email?address=burak.ugur@protonmail.com&padding=8">
 
-> LinkedIn: [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/burak-u%C4%9Fur/)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/burak-u%C4%9Fur/)
 
 ## 🔵 License
 
 This project is licensed under the GNU General Public License v3.0.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## New Features
 
-1. Gelcek tahminleri yapay sinir ağlarına eklecenek
-2. Model kayıt etme seçeneği gelecek
-3. Box-Jenkis yöntemleri güncellenecek
-4. Dosyalar yerelden bağımsızlaştırılacak
-5. Gerçek zamanlı veri işleme yapılacak
-6. Profil sayfası güncellenecek
-7. Ek LSTM yöntemleri eklenecek
-8. Özel sinir ağı eklenebilecek
-9. Yeni üye olma sayfası eklenecek
-=======
-Run Command:
-> Streamlit run app.py
->>>>>>> bee7b8cc06d1344c805532e8d47994bc18b95e90
+1. Future predictions will be added to neural networks
+2. Add the option to save the model
+3. Box-Jenkis methods will be updated
+4. Data Files will be stored cloud
+5. Add Real-time data processing
+6. Profile page will be updated
+7. Add Additional LSTM methods
+8. Can be added Custom neural network
+9. Add a new sign up page
