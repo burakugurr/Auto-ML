@@ -2,7 +2,13 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![version](https://img.shields.io/badge/version-0.1.0-blue)
+
 ## 🟢 About
+
+<p align="center">
+  <img src="https://github.com/burakugurr/Stockred/blob/master/images/Stockred.png" width="350" title="Stockred">
+  
+</p>
 
 This is a web application that can help you estimate the stock prices and anomaly detection.
 
@@ -25,11 +31,11 @@ This is a web application that can help you estimate the stock prices and anomal
 5. You can see the stock price anomaly with the original graph
 6. You can see the stock price forecast
 
-# 👨🏽‍💻 Developed by
+## 👨🏽‍💻 Developed by
 
 - Burak Uğur
 
-### 📞 Contact
+## 📞 Contact
 
 
 <img src="https://badges.krynn.dev/email?address=burak.ugur@protonmail.com&padding=8">
