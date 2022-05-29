@@ -26,14 +26,9 @@ st.set_page_config(
 # username = "postgres"
 # password = "postgres"
 # port = "5432"
-# database = "database"S
+# database = "database"
 
 
-hostname = "ec2-52-213-119-221.eu-west-1.compute.amazonaws.com"
-username = "givhjdkqofykpb"
-password = "713e1983a958213f26e62023fb0b5809ceebd86c82d722dfa149d03212cc220c"
-port = "5432"
-database = "d4f45drk5rnlgg"
 
 
 
